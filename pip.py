@@ -13,7 +13,7 @@ import pickle
 st.title('Temperature Prediction')
 st.write('This app predicts Temperature value from other Parameters ')
 
-abid=pd.read_csv(r'C:\Users\Adeola\Desktop\RESEARCH\DATA\croschek\Sortdate\Abid Combine.csv')
+abid=pd.read_csv(r'C:\Users\Adeola\Desktop\app web\Abid Combine.csv')
 abid['Month'] = pd.to_datetime(abid['Month'], format='%m').dt.month_name().str.slice(stop=3)
 xx=abid.drop(['Month','Temperature (degree celsius)'],axis=1)
 #xx
@@ -52,8 +52,8 @@ if st.checkbox("Show Correlation Plot"):
 
 #loading our model
 model1 = pickle.load(open('Best.pkl','rb'))
-r_sq = model1.score(xx, yy)
-print('coefficient of determination:', r_sq)
+# r_sq = model1.score(xx, yy)
+# print('coefficient of determination:', r_sq)
 # st.write("### r_sq")
 
 def main():
