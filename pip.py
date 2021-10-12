@@ -12,12 +12,11 @@ import altair as alt
 import pickle
 st.title('Temperature Prediction')
 st.write('This app predicts Temperature value from other Parameters ')
-
-abid=pd.read_csv(r'C:\Users\Adeola\Desktop\app web\Abid Combine.csv')
+abid=pd.read_csv('Abid Combine.csv')
 abid['Month'] = pd.to_datetime(abid['Month'], format='%m').dt.month_name().str.slice(stop=3)
-xx=abid.drop(['Month','Temperature (degree celsius)'],axis=1)
-#xx
-yy= abid[['Temperature (degree celsius)']]
+# xx=abid.drop(['Month','Temperature (degree celsius)'],axis=1)
+# #xx
+# yy= abid[['Temperature (degree celsius)']]
 
 # abid
 # st.table(abid.plot(x="Month", kind="line",figsize=(18,5)))
